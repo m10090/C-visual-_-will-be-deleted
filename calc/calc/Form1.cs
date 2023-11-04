@@ -4,32 +4,32 @@ namespace calc
 {
     public partial class Form1 : Form
     {
-        private bool autoClear;
+        private bool done_calculation;
         public Form1()
         {
             InitializeComponent();
-            displayCalc.Text = "abo khaled's ";
-            autoClear = true;
+            mainDisplay.Text = "abo khaled's ";
+            done_calculation = true;
         }
         private void deleteAfterResult()
         {
-            if (autoClear)
+            if (done_calculation)
             {
-                displayCalc.Text = "";
-                autoClear = false;
+                mainDisplay.Text = "";
+                done_calculation = false;
             }
         }
 
         private void Clear_click(object sender, EventArgs e)
         {
             deleteAfterResult();
-            displayCalc.Text = "";
+            mainDisplay.Text = "";
         }
 
         private void dot_click(object sender, EventArgs e)
         {
             deleteAfterResult();
-            displayCalc.Text += '.';
+            mainDisplay.Text += '.';
         }
 
         private void equal_click(object sender, EventArgs e)
@@ -38,19 +38,19 @@ namespace calc
             System.Data.DataTable dt = new System.Data.DataTable();
             try
             {
-                displayCalc.Text += "=" + dt.Compute(displayCalc.Text, string.Empty);
+                mainDisplay.Text += "=" + dt.Compute(mainDisplay.Text, string.Empty);
             }
             catch
             {
-                displayCalc.Text = "error try again";
+                mainDisplay.Text = "error try again";
             }
-            autoClear = true;
+            done_calculation = true;
         }
 
         private void plus_click(object sender, EventArgs e)
         {
             deleteAfterResult();
-            displayCalc.Text += '+';
+            mainDisplay.Text += '+';
         }
 
         private void delete_click(object sender, EventArgs e)
@@ -58,7 +58,7 @@ namespace calc
             deleteAfterResult();
             try
             {
-                displayCalc.Text = displayCalc.Text.Substring(0, displayCalc.Text.Length - 1);
+                mainDisplay.Text = mainDisplay.Text.Substring(0, mainDisplay.Text.Length - 1);
             }
             catch (ArgumentOutOfRangeException) { }
 
@@ -68,49 +68,49 @@ namespace calc
         private void power_click(object sender, EventArgs e)
         {
             deleteAfterResult();
-            displayCalc.Text += '^';
+            mainDisplay.Text += '^';
         }
 
         private void nine_click(object sender, EventArgs e)
         {
             deleteAfterResult();
-            displayCalc.Text += '9';
+            mainDisplay.Text += '9';
         }
         private void seven_click(object sender, EventArgs e)
         {
             deleteAfterResult();
-            displayCalc.Text += '7';
+            mainDisplay.Text += '7';
         }
         private void eight_click(object sender, EventArgs e)
         {
             deleteAfterResult();
-            displayCalc.Text += '8';
+            mainDisplay.Text += '8';
 
         }
 
         private void times_click(object sender, EventArgs e)
         {
             deleteAfterResult();
-            displayCalc.Text += '*';
+            mainDisplay.Text += '*';
         }
 
         private void one_click(object sender, EventArgs e)
         {
             deleteAfterResult();
-            displayCalc.Text += '1';
+            mainDisplay.Text += '1';
         }
 
         private void three_click(object sender, EventArgs e)
         {
             deleteAfterResult();
-            displayCalc.Text += '3';
+            mainDisplay.Text += '3';
         }
 
         private void two_click(object sender, EventArgs e)
         {
 
             deleteAfterResult();
-            displayCalc.Text += '2';
+            mainDisplay.Text += '2';
 
 
         }
@@ -118,7 +118,7 @@ namespace calc
         private void five_click(object sender, EventArgs e)
         {
             deleteAfterResult();
-            displayCalc.Text += '5';
+            mainDisplay.Text += '5';
 
 
         }
@@ -126,40 +126,40 @@ namespace calc
         {
 
             deleteAfterResult();
-            displayCalc.Text += '6';
+            mainDisplay.Text += '6';
         }
 
         private void minus_click(object sender, EventArgs e)
         {
 
             deleteAfterResult();
-            displayCalc.Text += '-';
+            mainDisplay.Text += '-';
         }
 
         private void zero_click(object sender, EventArgs e)
         {
             deleteAfterResult();
 
-            displayCalc.Text += '0';
+            mainDisplay.Text += '0';
         }
 
         private void divided_click(object sender, EventArgs e)
         {
             deleteAfterResult();
 
-            displayCalc.Text += '/';
+            mainDisplay.Text += '/';
         }
 
         private void four_click(object sender, EventArgs e)
         {
             deleteAfterResult();
 
-            displayCalc.Text += '4';
+            mainDisplay.Text += '4';
         }
         private void plusMinus_click(object sender, EventArgs e)
         {
             deleteAfterResult();
-            displayCalc.Text += "00";
+            mainDisplay.Text += "00";
         }
     }
 }

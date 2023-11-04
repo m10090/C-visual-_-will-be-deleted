@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            displayCalc = new TextBox();
+            mainDisplay = new TextBox();
             clear = new Button();
             power = new Button();
             divided = new Button();
@@ -53,14 +53,14 @@
             // 
             // displayCalc
             // 
-            displayCalc.BackColor = SystemColors.ControlText;
-            displayCalc.Font = new Font("Times New Roman", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            displayCalc.ForeColor = Color.White;
-            displayCalc.Location = new Point(12, 12);
-            displayCalc.Name = "displayCalc";
-            displayCalc.ReadOnly = true;
-            displayCalc.Size = new Size(404, 44);
-            displayCalc.TabIndex = 0;
+            mainDisplay.BackColor = SystemColors.ControlText;
+            mainDisplay.Font = new Font("Times New Roman", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            mainDisplay.ForeColor = Color.White;
+            mainDisplay.Location = new Point(12, 12);
+            mainDisplay.Name = "displayCalc";
+            mainDisplay.ReadOnly = true;
+            mainDisplay.Size = new Size(404, 44);
+            mainDisplay.TabIndex = 0;
             // 
             // clear
             // 
@@ -328,7 +328,7 @@
             Controls.Add(divided);
             Controls.Add(power);
             Controls.Add(clear);
-            Controls.Add(displayCalc);
+            Controls.Add(mainDisplay);
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
@@ -337,7 +337,7 @@
 
         #endregion
 
-        private TextBox displayCalc;
+        private TextBox mainDisplay;
         private Button clear;
         private Button power;
         private Button divided;
